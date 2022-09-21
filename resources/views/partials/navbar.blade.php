@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger mb-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger mb-4">
         <div class="container">
             <a class="navbar-brand" href="/">Jamal Blog</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

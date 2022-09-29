@@ -4,13 +4,31 @@
 
 @section('container')
 
-<article>
-    <h2>{{ $post->title }}</h2>
-    {{-- <h5>{{ $post->author }}</h5> --}}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
-    {{-- agar html spesial char tidak di print  --}}
-    {!! $post["body"] !!} 
-</article>
+            <h2 class="mb-4">{{ $post->title }}</h2>
+            {{-- <h5>{{ $post->author }}</h5> --}}
 
-<a href="/blog">Back to blog</a>
+            <p>By. <a href="/blog?author={{ $post->user->username }}" class="text-decoration-none">{{ $post->user->name }}</a>
+                in <a href="/blog?category={{ $post->category->slug }}"
+                    class="text-decoration-none">{{ $post->category->name }}</a></p>
+            {{-- agar html spesial char tidak di print  --}}
+
+            <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}"
+                alt="{{ $post->category->name }}" class="img-fluid">
+
+            <article class="my-3 fs-5">
+                {!! $post["body"] !!}
+            </article>
+            <a href="/blog" class="text-decoration-none mt-2">Back to blog</a>
+        </div>
+    </div>
+</div>
+
+
+<br>
+
+
 @endsection

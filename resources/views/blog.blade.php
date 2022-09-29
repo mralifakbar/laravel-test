@@ -11,13 +11,14 @@
     <div class="col-md-6">
         <form action="/blog" method="get">
             @if (request('category'))
-                <input type="hidden" name="category" value="{{ request('category') }}">
+            <input type="hidden" name="category" value="{{ request('category') }}">
             @endif
             @if (request('author'))
-                <input type="hidden" name="author" value="{{ request('author') }}">
+            <input type="hidden" name="author" value="{{ request('author') }}">
             @endif
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search" name="search" value="{{ request('search') }}">
+                <input type="text" class="form-control" placeholder="Search" name="search"
+                    value="{{ request('search') }}">
                 <button class="btn btn-danger" type="submit">Search</button>
             </div>
         </form>
@@ -75,5 +76,13 @@
 @else
 <p class="text-center fs-4">No post found.</p>
 @endif
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 d-flex justify-content-center">
+            {{ $posts->links() }}
+        </div>
+    </div>
+</div>
 
 @endsection

@@ -7,7 +7,7 @@
 </div>
 
 <div class="col-lg-8">
-    <form method="POST" action="/dashboard/posts">
+    <form method="POST" action="/dashboard/posts" class="mb-5">
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
@@ -27,7 +27,7 @@
                 </div>
             @enderror
         </div>
-        <div class="mb-3">
+        <div class="mt-3">
             <label for="category" class="form-label">Category</label>
             <select class="form-select" id="category" name="category_id" required>
                 @foreach ($categories as $category)
@@ -39,7 +39,7 @@
                 @endforeach
             </select>
         </div>
-        <div class="mb-3">
+        <div class="my-3">
             <label for="body" class="form-label">Body</label>
             @error('body')
                 <p class="text-danger">{{ $message }}</p>
